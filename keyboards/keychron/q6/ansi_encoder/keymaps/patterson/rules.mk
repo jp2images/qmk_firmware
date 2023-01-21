@@ -1,4 +1,4 @@
-VIA_ENABLE = yes
+VIA_ENABLE = no
 ENCODER_MAP_ENABLE = yes
 
 VPATH += keyboards/keychron/common
