@@ -37,6 +37,10 @@
 /* DIP switch */
 #define DIP_SWITCH_MATRIX_GRID  { {5, 4} }
 
+/* Setting up the leader key */
+#define LEADER_TIMEOUT 300 // Time in milliseconds to complete the leader key, key combination
+#define LEADER_PER_KEY_TIMING // Allow for per key combination timing of the leader key.
+
 /* Disable DIP switch in matrix data */
 #define MATRIX_MASKED
 
@@ -47,36 +51,21 @@
 #define WEAR_LEVELING_LOGICAL_SIZE 2048
 #define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
 
+#define RGB_MATRIX_KEYPRESSES // reacts to keypresses
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
 // https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
-// #define ENABLE_RGB_MATRIX_ALPHAS_MODS
-// #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
-// #define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
 
-// #define ENABLE_RGB_MATRIX_BAND_SAT
-// #define ENABLE_RGB_MATRIX_BAND_VAL
-// #define ENABLE_RGB_MATRIX_BAND_PINWHEEL_SAT
-// #define ENABLE_RGB_MATRIX_BAND_PINWHEEL_VAL
-// #define ENABLE_RGB_MATRIX_BAND_SPIRAL_SAT
+/* Full keyboard solid hue cycling through full gradient */
+#define ENABLE_RGB_MATRIX_CYCLE_ALL //Need this for the RGB LEDs to light up.
 
-#define ENABLE_RGB_MATRIX_CYCLE_ALL
-#define RGB_MATRIX_KEYPRESSES
-
-#define ENABLE_RGB_MATRIX_TYPING_HEATMAP
-// https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effect-typing-heatmap
-#define RGB_MATRIX_TYPING_HEATMAP_DECREASE_DELAY_MS 2500
-#define RGB_MATRIX_TYPING_HEATMAP_SPREAD 40
 // enabled only of RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is defined
-#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
-
-
-// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE
-// #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
+#define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE // Pulses keys hit to hue & value then fades value out
+// Note that this feature DOES NOT work with Heat Map.
 
 //JP Additional customizations https://qmk.github.io/qmk_mkdocs/master/en/feature_auto_shift/
 #define AUTO_SHIFT_REPEAT
-#define AUTO_SHIFT_TIMEOUT 180 //Starting with 200. 150 was the value from the help docs.
+#define AUTO_SHIFT_TIMEOUT 250 //Starting with 200. 150 was the value from the help docs.
 // #define NO_AUTO_SHIFT_SPECIAL
 
 

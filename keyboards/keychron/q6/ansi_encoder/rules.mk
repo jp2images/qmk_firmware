@@ -16,13 +16,15 @@ NKRO_ENABLE = yes           # Enable USB N-key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-ENCODER_ENABLE = yes        # Enable Encoder
+ENCODER_ENABLE = yes        # Enable Encoder (Separate Volume switch on the keyboard)
 DIP_SWITCH_ENABLE = yes
-RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_ENABLE = yes     # RGB LED under each key
 RGB_MATRIX_DRIVER = CKLED2001
-LTO_ENABLE = yes
+LTO_ENABLE = yes            # Link Time Enable (Create smaller binary)
 EEPROM_DRIVER = wear_leveling
 WEAR_LEVELING_DRIVER = embedded_flash
+
+LEADER_ENABLE = yes         # Enable the Leader Key functionality of QMK
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
